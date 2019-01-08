@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--  configuration for singleton -->
+     
+    <!-- <bean id="car" class="cb.beans.Car">
+		<property name="chassisNumber" value="eng2012" />
+		<property name="color" value="baker's chocolate" />
+		<property name="fuelType" value="petrol" />
+		<property name="average" value="12.50" />
+		<property name="price" value="23800" />
+	</bean> -->
+     
+    
+	<bean id="car" class="cb.beans.Car" scope="prototype">
+		<property name="chassisNumber" value="eng2012" />
+		<property name="color" value="baker's chocolate" />
+		<property name="fuelType" value="petrol" />
+		<property name="average" value="12.50" />
+		<property name="price" value="17800" />
+	</bean>
+</beans>

@@ -1,0 +1,9 @@
+commons-logging
+spring-aspects
+spring-beans
+spring-context
+spring-core
+spring-expression
+
+spring-context-support
+spring-aop

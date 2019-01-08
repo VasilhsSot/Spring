@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student" class="cb.beans.Student" abstract="true">
+		<property name="rollNo" value="34" />
+		<property name="name" value="Sasha" />
+	</bean>
+
+	<!-- <bean id="eng_old" class="cb.beans.EngStudent">
+		<property name="rollNo" value="34" />
+		<property name="name" value="Sasha" />
+		<property name="branch_code" value="Comp230" />
+		<property name="college_code" value="Clg_Eng_045" />
+	</bean> -->
+
+	<!-- <bean id="eng_new" class="cb.beans.EngStudent" parent="student">
+		<property name="branch_code" value="Comp230" />
+		<property name="college_code" value="Clg_Eng_045" />
+	</bean> -->
+
+	<bean id="egg_new1" class="cb.beans.EngStudent" parent="student">
+	    <property name="rollNo" value="40" />
+		<property name="branch_code" value="Comp230" />
+		<property name="college_code" value="Clg_Eng_045" />
+	</bean>
+</beans>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="book1" class="cb.beans.Book">
+		<property name="isbn" value="96145237" />
+		<property name="book_name" value="Princess Sindrella" />
+		<property name="price" value="20" />
+		<property name="publication" value="Packt-Pub"></property>
+	</bean>
+
+	<bean id="book2" class="cb.beans.Book">
+		<constructor-arg value="423334566" />
+		<constructor-arg value="Core Java" />
+		<constructor-arg value="45" />
+		<constructor-arg value="Packt-Pub" />
+	</bean>
+
+	<bean id="book3" class="cb.beans.Book" 
+		p:isbn="5687463218"
+		p:book_name="Playing it in my way" 
+		p:price="17" 
+		p:publication="Hodder and Stoughton">
+	</bean>
+
+
+	<bean id="library_list" class="cb.beans.Library_List">
+		<property name="books">
+			<list>
+				<ref bean="book1"></ref>
+				<ref bean="book2"></ref>
+				<ref bean="book3"></ref>
+				<ref bean="book3"></ref>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="library_set" class="cb.beans.Library_Set">
+		<property name="books">
+			<set>
+				<ref bean="book1"></ref>
+				<ref bean="book2"></ref>
+				<ref bean="book3"></ref>
+				<ref bean="book3"></ref>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="library_map" class="cb.beans.Library_Map">
+		<property name="books">
+			<map>
+				<entry key="96145237" value-ref="book1" />
+				<entry key="5687463218" value-ref="book3" />
+				<entry key="423334566" value-ref="book2" />
+			</map>
+		</property>
+	</bean>
+
+</beans>
